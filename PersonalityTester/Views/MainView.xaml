@@ -1,0 +1,96 @@
+﻿<Window x:Class="PersonalityTester.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cm="http://caliburnmicro.com"
+        mc:Ignorable="d"
+        Title="Personality Tester" Height="600" Width="800" 
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\Styles\StartStyle.xaml"/>
+                <ResourceDictionary Source="..\Resources\Styles\QuestionStyle.xaml"/>
+                <ResourceDictionary Source="..\Resources\Styles\ScoreStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid>
+        <!-- *********************   Start   ************************* -->
+        <StackPanel>
+            <StackPanel.Style>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Visibility" Value="Visible"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsStarted}" Value="true">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsFinished}" Value="true">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+            <TextBlock Text="{Binding QuestionsCount,StringFormat='Welcome to the Personality Tester\nYou have \{0\} to answer.'}"
+                       Style="{StaticResource WelcomeTextBlockStyle}"/>
+            <Button Name="Start" Content="Start" Width="150" Height="60" FontSize="25" Style="{StaticResource RoundCornerButton}"
+                cm:Message.Attach="[Event Click] = [Action Start()]">
+            </Button>
+        </StackPanel>
+        <!-- *********************   end of Start   ************************* -->
+
+        <!-- *********************   Questions   ************************* -->
+        <Grid Visibility="{Binding IsStarted, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="100,30,100,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="{Binding CurrentQuestion.Text}" Style="{StaticResource QuestionTextBlockStyle}"/>
+            <ItemsControl Grid.Row="1" ItemsSource="{Binding CurrentQuestion.Answers}" Margin="0,20,0,0">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource AnswerBorderStyle}">
+                            <RadioButton Style="{StaticResource AnswerRadioButtonStyle}" GroupName="Answers" 
+                                         cm:Message.Attach="[Event Click] = [Action AnswerSelected($dataContext)]">
+                                <RadioButton.Content>
+                                    <TextBlock Text="{Binding Text}" TextWrapping="Wrap"/>
+                                </RadioButton.Content>
+                            </RadioButton>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+            <ProgressBar Grid.Row="2" Value="{Binding ProgressValue}" Maximum="{Binding ProgressMax}" 
+                         Style="{StaticResource QuestionsProgressBarStyle}"/>
+            <StackPanel Grid.Row="3" VerticalAlignment="Bottom">
+                <Button cm:Message.Attach="[Event Click] = [Action Next()]" Content="{Binding NextButtonName}" 
+                        IsEnabled="{Binding CanMoveNext}" Width="80" Height="40"
+                        Style="{StaticResource RoundCornerButton}" />
+            </StackPanel>
+        </Grid>
+        <!-- *********************   end of Questions   ************************* -->
+
+        <!-- *********************   Score result   ************************* -->
+        <StackPanel Visibility="{Binding IsFinished,Converter={StaticResource BooleanToVisibilityConverter}}" Margin="100" HorizontalAlignment="Center">
+            <TextBlock Text="Congratulations!"  Style="{StaticResource CongratulationsTextBlockStyle}"/>
+            <TextBlock Text="You have finished the Personality test" Style="{StaticResource NoteTextBlockStyle}"/>
+            <TextBlock Text="Your Score is:" Style="{StaticResource ScoreTextBlockStyle}"/>
+            <TextBlock Text="{Binding FinalScore}" Style="{StaticResource ScoreTextBlockStyle}"/>
+            <Button Content="Close" Width="150" Height="60" FontSize="25" Margin="0,50,0,0" Style="{StaticResource RoundCornerButton}"
+                    cm:Message.Attach="[Event Click] = [Action Close($view)]"/>
+        </StackPanel>
+        <!-- *********************   end of Score result   ************************* -->
+    </Grid>
+    
+</Window>
