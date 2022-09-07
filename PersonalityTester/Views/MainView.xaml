@@ -21,7 +21,7 @@
     
     <Grid>
         <!-- *********************   Start   ************************* -->
-        <StackPanel>
+        <StackPanel Margin="100">
             <StackPanel.Style>
                 <Style TargetType="StackPanel">
                     <Setter Property="Visibility" Value="Visible"/>
@@ -35,8 +35,8 @@
                     </Style.Triggers>
                 </Style>
             </StackPanel.Style>
-            <TextBlock Text="{Binding QuestionsCount,StringFormat='Welcome to the Personality Tester\nYou have \{0\} to answer.'}"
-                       Style="{StaticResource WelcomeTextBlockStyle}"/>
+            <TextBlock Text="{Binding QuestionsCount,StringFormat='Welcome to the Personality Tester&#x0d;&#x0a;You have \{0\} questions to answer.'}"
+                       Style="{StaticResource WelcomeTextBlockStyle}" Margin="0,0,0,50"/>
             <Button Name="Start" Content="Start" Width="150" Height="60" FontSize="25" Style="{StaticResource RoundCornerButton}"
                 cm:Message.Attach="[Event Click] = [Action Start()]">
             </Button>

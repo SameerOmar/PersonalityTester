@@ -6,7 +6,6 @@
 // -----------------------------------------------------------------------
 
 using Microsoft.EntityFrameworkCore;
-using PersonalityTester.Helpers;
 using PersonalityTester.Models;
 
 namespace PersonalityTester.Data

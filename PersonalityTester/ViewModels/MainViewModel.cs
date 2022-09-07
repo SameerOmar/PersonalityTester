@@ -34,20 +34,6 @@ namespace PersonalityTester.ViewModels
         }
 
         /// <summary>
-        ///     Gets the questions count.
-        /// </summary>
-        public int QuestionsCount { get; } = 8;
-
-        /// <summary>
-        ///     Gets or sets the name of the Next button.
-        /// </summary>
-        public string NextButtonName
-        {
-            get => _actionName;
-            set => SetValue(value, ref _actionName, nameof(NextButtonName));
-        }
-
-        /// <summary>
         ///     Gets a value indicating whether can press Next/Finish button.
         /// </summary>
         public bool CanMoveNext => CollectedScores.ContainsKey(CurrentQuestion.Id);
@@ -81,6 +67,24 @@ namespace PersonalityTester.ViewModels
         }
 
         /// <summary>
+        ///     Gets or sets a value indicating whether this test is started.
+        /// </summary>
+        public bool IsStarted
+        {
+            get => _started;
+            set => SetValue(value, ref _started, nameof(IsStarted));
+        }
+
+        /// <summary>
+        ///     Gets or sets the name of the Next button.
+        /// </summary>
+        public string NextButtonName
+        {
+            get => _actionName;
+            set => SetValue(value, ref _actionName, nameof(NextButtonName));
+        }
+
+        /// <summary>
         ///     Gets the progress maximum value.
         /// </summary>
         public int ProgressMax => QuestionsCount;
@@ -95,21 +99,17 @@ namespace PersonalityTester.ViewModels
         }
 
         /// <summary>
+        ///     Gets the questions count.
+        /// </summary>
+        public int QuestionsCount { get; } = 8;
+
+        /// <summary>
         ///     Gets or sets the questions list.
         /// </summary>
         public List<Question> QuestionsList
         {
             get => _questionsList;
             set => SetValue(value, ref _questionsList, nameof(QuestionsList));
-        }
-
-        /// <summary>
-        ///     Gets or sets a value indicating whether this test is started.
-        /// </summary>
-        public bool IsStarted
-        {
-            get => _started;
-            set => SetValue(value, ref _started, nameof(IsStarted));
         }
 
         /// <summary>

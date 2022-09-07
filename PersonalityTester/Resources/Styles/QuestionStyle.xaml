@@ -22,6 +22,7 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Margin" Value="5"/>
+        <Setter Property="Cursor" Value="Hand"/>
     </Style>
 
     <Style x:Key="QuestionsProgressBarStyle" TargetType="ProgressBar" BasedOn="{StaticResource ProgressBarBaseStyle}">

@@ -1,7 +1,7 @@
 ﻿// -----------------------------------------------------------------------
-//  <copyright file="IDatabaseService.cs" company="Excerya">
+//  <copyright file="IDatabaseService.cs" company="">
 //      Author: Sameer Omar
-//      Copyright (c) Excerya. All rights reserved.
+//      Copyright (c) . All rights reserved.
 //  </copyright>
 // -----------------------------------------------------------------------
 

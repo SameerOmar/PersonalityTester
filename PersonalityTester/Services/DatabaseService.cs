@@ -21,6 +21,10 @@ namespace PersonalityTester.Services
 
         #endregion
 
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="DatabaseService" /> class.
+        /// </summary>
+        /// <param name="appDbContext">The application database context.</param>
         public DatabaseService(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
