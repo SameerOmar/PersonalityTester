@@ -10,7 +10,7 @@ using PersonalityTester.Models;
 
 namespace PersonalityTester.Services;
 
-internal interface IDatabaseService
+public interface IDatabaseService
 {
     /// <summary>
     ///     Gets the top questions specified by the count.

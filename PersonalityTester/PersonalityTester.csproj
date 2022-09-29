@@ -4,7 +4,7 @@
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>net6.0-windows</TargetFramework>
 		<UserSecretsId>93d033dc-12eb-446a-91a6-efec88dfb437</UserSecretsId>
-		<Nullable>enable</Nullable>
+		<Nullable>disable</Nullable>
 		<UseWPF>true</UseWPF>
 	</PropertyGroup>
 

@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PersonalityTester.Models
 {
-    internal class Answer
+    public class Answer
     {
         /// <summary>
         ///     Gets or sets the identifier.

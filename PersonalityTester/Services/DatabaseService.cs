@@ -13,7 +13,7 @@ using PersonalityTester.Models;
 
 namespace PersonalityTester.Services
 {
-    internal class DatabaseService : IDatabaseService
+    public class DatabaseService : IDatabaseService
     {
         #region
 

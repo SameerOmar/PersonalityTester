@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalityTester", "PersonalityTester\PersonalityTester.csproj", "{769FAC29-D45A-4B11-9AD0-DA5B6259FE2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalityTester", "PersonalityTester\PersonalityTester.csproj", "{769FAC29-D45A-4B11-9AD0-DA5B6259FE2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalityTesterUnitTests", "PersonalityTesterUnitTests\PersonalityTesterUnitTests.csproj", "{A8628E29-94FC-4D26-A8FD-3A8D662F2900}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{769FAC29-D45A-4B11-9AD0-DA5B6259FE2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{769FAC29-D45A-4B11-9AD0-DA5B6259FE2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{769FAC29-D45A-4B11-9AD0-DA5B6259FE2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8628E29-94FC-4D26-A8FD-3A8D662F2900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8628E29-94FC-4D26-A8FD-3A8D662F2900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8628E29-94FC-4D26-A8FD-3A8D662F2900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8628E29-94FC-4D26-A8FD-3A8D662F2900}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,7 +10,7 @@ using PersonalityTester.Models;
 
 namespace PersonalityTester.Data
 {
-    internal class AppDbContext : DbContext
+    public class AppDbContext : DbContext
     {
         /// <summary>
         ///     Initializes a new instance of the <see cref="AppDbContext" /> class.

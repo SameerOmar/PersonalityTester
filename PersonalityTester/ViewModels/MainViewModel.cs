@@ -28,6 +28,10 @@ namespace PersonalityTester.ViewModels
 
         #endregion
 
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="MainViewModel" /> class.
+        /// </summary>
+        /// <param name="databaseService">The database service.</param>
         public MainViewModel(IDatabaseService databaseService)
         {
             _databaseService = databaseService;
@@ -101,7 +105,7 @@ namespace PersonalityTester.ViewModels
         /// <summary>
         ///     Gets the questions count.
         /// </summary>
-        public int QuestionsCount { get; } = 8;
+        public int QuestionsCount => 8;
 
         /// <summary>
         ///     Gets or sets the questions list.

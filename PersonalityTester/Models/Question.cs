@@ -10,7 +10,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PersonalityTester.Models
 {
-    internal class Question
+    public class Question
     {
         /// <summary>
         ///     Gets or sets the answers.
